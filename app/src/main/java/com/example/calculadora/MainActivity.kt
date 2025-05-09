@@ -6,6 +6,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import kotlin.math.*
+import kotlin.math.pow
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -86,11 +89,31 @@ class MainActivity : AppCompatActivity() {
                 isResult = true
             }
 
+            //Calculo cientifico
+
+            findViewById<TextView>(R.id.btnSen).setOnClickListener {
+                val value = display.text.toString().toDoubleOrNull() ?: 0.0
+                display.text = kotlin.math.sin(Math.toRadians(value)).toString()
+                isResult = true
+            }
+
+            findViewById<TextView>(R.id.btnCos).setOnClickListener {
+                val value = display.text.toString().toDoubleOrNull() ?: 0.0
+                display.text = kotlin.math.cos(Math.toRadians(value)).toString()
+                isResult = true
+            }
+
             fun setOperacao(op: Int, display: TextView) {
                 temp1 = display.text.toString().toDoubleOrNull() ?: 0.0
                 operacao = op
                 display.text = "0"
                 isResult = false
+            }
+
+            findViewById<TextView>(R.id.btnTan).setOnClickListener {
+                val value = display.text.toString().toDoubleOrNull() ?: 0.0
+                display.text = kotlin.math.tan(Math.toRadians(value)).toString()
+                isResult = true
             }
 
             findViewById<TextView>(R.id.btnMais).setOnClickListener { setOperacao(1, display) }
@@ -105,6 +128,7 @@ class MainActivity : AppCompatActivity() {
                     2 -> temp1 - temp2
                     3 -> temp1 * temp2
                     4 -> if (temp2 != 0.0) temp1 / temp2 else Double.NaN
+                    5 -> temp1.pow(temp2)
                     else -> 0.0
                 }
 

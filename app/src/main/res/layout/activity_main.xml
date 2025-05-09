@@ -70,12 +70,12 @@
         android:layout_height="wrap_content">
 
         <Button
-            android:id="@+id/btnSin"
+            android:id="@+id/btnSen"
             android:layout_width="32dp"
             android:layout_margin="2dp"
             android:layout_weight="1"
             android:backgroundTint="#E40000"
-            android:text="sin" />
+            android:text="sen" />
 
         <Button
             android:id="@+id/btnCos"
