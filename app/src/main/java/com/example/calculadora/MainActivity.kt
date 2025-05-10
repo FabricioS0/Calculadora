@@ -103,6 +103,31 @@ class MainActivity : AppCompatActivity() {
                 isResult = true
             }
 
+            findViewById<TextView>(R.id.btnTan).setOnClickListener {
+                val value = display.text.toString().toDoubleOrNull() ?: 0.0
+                display.text = kotlin.math.tan(Math.toRadians(value)).toString()
+                isResult = true
+            }
+
+            findViewById<TextView>(R.id.btnSqrt).setOnClickListener {
+                val value = display.text.toString().toDoubleOrNull() ?: 0.0
+                display.text = sqrt(value).toString()
+                isResult = true
+            }
+
+            findViewById<TextView>(R.id.btnQuadrado).setOnClickListener {
+                val value = display.text.toString().toDoubleOrNull() ?: 0.0
+                display.text = (value * value).toString()
+                isResult = true
+            }
+
+            findViewById<TextView>(R.id.btnPotencia).setOnClickListener {
+                temp1 = display.text.toString().toDoubleOrNull() ?: 0.0
+                operacao = 5 // novo código para xʸ
+                display.text = "0"
+                isResult = false
+            }
+
             fun setOperacao(op: Int, display: TextView) {
                 temp1 = display.text.toString().toDoubleOrNull() ?: 0.0
                 operacao = op
@@ -110,11 +135,6 @@ class MainActivity : AppCompatActivity() {
                 isResult = false
             }
 
-            findViewById<TextView>(R.id.btnTan).setOnClickListener {
-                val value = display.text.toString().toDoubleOrNull() ?: 0.0
-                display.text = kotlin.math.tan(Math.toRadians(value)).toString()
-                isResult = true
-            }
 
             findViewById<TextView>(R.id.btnMais).setOnClickListener { setOperacao(1, display) }
             findViewById<TextView>(R.id.btnMenos).setOnClickListener { setOperacao(2, display) }
