@@ -128,6 +128,57 @@ class MainActivity : AppCompatActivity() {
                 isResult = false
             }
 
+            findViewById<TextView>(R.id.btnFatorial).setOnClickListener {
+                val n = display.text.toString().toIntOrNull() ?: 0
+                if (n < 0) {
+                    display.text = "Erro"
+                } else {
+                    var f = 1L
+                    for (i in 1..n) f *= i
+                    display.text = f.toString()
+                }
+                isResult = true
+            }
+
+            findViewById<TextView>(R.id.btnLn).setOnClickListener {
+                val value = display.text.toString().toDoubleOrNull() ?: 1.0
+                display.text = kotlin.math.ln(value).toString()
+                isResult = true
+            }
+
+
+            findViewById<TextView>(R.id.btnLog).setOnClickListener {
+                val value = display.text.toString().toDoubleOrNull() ?: 1.0
+                display.text = kotlin.math.log10(value).toString()
+                isResult = true
+            }
+
+
+            findViewById<TextView>(R.id.btnE).setOnClickListener {
+                display.text = kotlin.math.E.toString()
+                isResult = true
+            }
+
+
+            findViewById<TextView>(R.id.btnPi).setOnClickListener {
+                display.text = kotlin.math.PI.toString()
+                isResult = true
+            }
+
+
+            findViewById<TextView>(R.id.bt  nSinal).setOnClickListener {
+                val value = display.text.toString().toDoubleOrNull() ?: 0.0
+                display.text = (-value).toString()
+                isResult = true
+            }
+
+
+            findViewById<TextView>(R.id.btnInverso).setOnClickListener {
+                val value = display.text.toString().toDoubleOrNull() ?: 0.0
+                display.text = if (value != 0.0) (1 / value).toString() else "Erro"
+                isResult = true
+            }
+
             fun setOperacao(op: Int, display: TextView) {
                 temp1 = display.text.toString().toDoubleOrNull() ?: 0.0
                 operacao = op

@@ -57,7 +57,7 @@
             android:text="xʸ" />
 
         <Button
-            android:id="@+id/btnOneDivX"
+            android:id="@+id/btnInverso"
             android:layout_width="32dp"
             android:layout_margin="2dp"
             android:layout_weight="1"
@@ -94,7 +94,7 @@
             android:text="tan" />
 
         <Button
-            android:id="@+id/btnFactorial"
+            android:id="@+id/btnFatorial"
             android:layout_width="32dp"
             android:layout_margin="2dp"
             android:layout_weight="1"
@@ -160,7 +160,7 @@
             android:text=")" />
 
         <Button
-            android:id="@+id/btnNegate"
+            android:id="@+id/btnSinal"
             android:layout_width="32dp"
             android:layout_margin="2dp"
             android:layout_weight="1"
