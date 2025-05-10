@@ -166,7 +166,7 @@ class MainActivity : AppCompatActivity() {
             }
 
 
-            findViewById<TextView>(R.id.bt  nSinal).setOnClickListener {
+            findViewById<TextView>(R.id.btnSinal).setOnClickListener {
                 val value = display.text.toString().toDoubleOrNull() ?: 0.0
                 display.text = (-value).toString()
                 isResult = true
